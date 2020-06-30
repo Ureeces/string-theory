@@ -87,15 +87,31 @@ const reverse = function(str) {
 }
 
 // (7) OnlyVowels - returns only the vowels from a word
-const onlyVowels = function(word){
-  let vowels = "aeiouAEIOU";
+// .includes is forbodden. F in the chat.
+
+// const onlyVowels = function(word){
+//   let vowels = "aeiouAEIOU";
+//   let vowelsOfWord = '';
+//   for(let i = 0; i < word.length; i++) {
+//     if(vowels.includes(word[i])) {
+//       vowelsOfWord += word[i];
+//     }
+//   }
+
+//   return vowelsOfWord;
+// }
+
+const onlyVowels = function(word) {
   let vowelsOfWord = '';
   for(let i = 0; i < word.length; i++) {
-    if(vowels.includes(word[i])) {
-      vowelsOfWord += word[i];
+    let currLet = word[i];
+    let isAVowel = currLet === "a" || currLet === "A" || currLet === "e" || currLet === "E" || currLet === "i" || currLet === "I" || currLet === "o" || currLet === "O" 
+    || currLet === "u" || currLet === "U" ? true: false;
+
+    if(isAVowel) {
+      vowelsOfWord += currLet;
     }
   }
-
   return vowelsOfWord;
 }
 
